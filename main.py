@@ -4,13 +4,13 @@ from money_machine import MoneyMachine
 
 KEEP_WORKING = True
 drinks_that_can_be_made = Menu()
+ingredients_information = CoffeeMaker()
+money_operations = MoneyMachine()
+user_drink = Menu()
 
 while KEEP_WORKING:
     user_choice = input(f'What would you like? ({drinks_that_can_be_made.get_items()}): ').lower()
-    ingredients_information = CoffeeMaker()
-    money_operations = MoneyMachine()
-    user_drink = Menu()
-
+    
     if user_choice == 'off':
         print('Coffee machine is off')
         KEEP_WORKING = False
