@@ -3,12 +3,12 @@ from coffee_maker import CoffeeMaker
 from money_machine import MoneyMachine
 
 KEEP_WORKING = True
-drinks_that_can_be_made = Menu()
 ingredients_information = CoffeeMaker()
 money_operations = MoneyMachine()
 user_drink = Menu()
 
 while KEEP_WORKING:
+    drinks_that_can_be_made = Menu()
     user_choice = input(f'What would you like? ({drinks_that_can_be_made.get_items()}): ').lower()
     
     if user_choice == 'off':
@@ -23,9 +23,9 @@ while KEEP_WORKING:
         if user_drink_name is None:
             continue
         else:
-            ingredients_is_ok = ingredients_information.is_resource_sufficient(user_drink_name)
+            ingredients_are_ok = ingredients_information.is_resource_sufficient(user_drink_name)
 
-        if ingredients_is_ok:
+        if ingredients_are_ok:
             user_drink_cost = user_drink_name.cost
             payment_process = money_operations.make_payment(user_drink_cost)
 
